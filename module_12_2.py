@@ -40,17 +40,19 @@ class TournamentTest(unittest.TestCase):
         self.runner_3 = Runner('Ник', 3)
     @classmethod
     def tearDownClass(cls):
-        for key, value in cls.all_results.items():
-            print(key, value)
+        pass
     def test_1(self):
         Tournament_1 = Tournament(90, self.runner_1, self.runner_3)
         self.all_results = Tournament_1.start()
         self.assertTrue(self.all_results[2] == 'Ник')
+        print(self.all_results)
     def test_2(self):
         Tournament_2 = Tournament(90, self.runner_2, self.runner_3)
         self.all_results = Tournament_2.start()
         self.assertTrue(self.all_results[2] == 'Ник')
+        print(self.all_results)
     def test_3(self):
         Tournament_3 = Tournament(90, self.runner_1, self.runner_2, self.runner_3)
         self.all_results = Tournament_3.start()
         self.assertTrue(self.all_results[3] == 'Ник')
+        print(self.all_results)
